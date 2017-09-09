@@ -1,0 +1,31 @@
+server:
+  port: 8000
+
+spring:
+  application:
+    name: jwt-server
+  messages:
+    basename: org/hibernate/validator/ValidationMessages, messages/ErrorMessages
+
+logging:
+  level:
+    ROOT: INFO
+
+jwt:
+  secret: a6e21884876f43819523c31033fa697e
+
+logbook:
+  format.style: http
+  write:
+    level: DEBUG
+    category: http.wire-log
+
+---
+
+spring:
+  profiles: local
+  data:
+    mongodb:
+      host: localhost
+      port: 27017
+      database: blablabike
